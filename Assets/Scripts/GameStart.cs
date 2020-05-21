@@ -8,10 +8,11 @@ public class GameStart : MonoBehaviour
 {
     public Text GameName;
     public GameObject StartButton, Sphere, SpawnBlocks;
-    public GameObject ControlButtons, BorderTop;
+    public GameObject ControlButtons, BorderDown;
     
     private bool _flag;
     private int _score;
+    private bool _i;
 
     private void OnMouseDown()
     {
@@ -48,7 +49,13 @@ public class GameStart : MonoBehaviour
     {
         _score +=1;
         GameName.text = "Score " + _score;
-        var i = BorderTop.GetComponent<BorderTop>().CheckGameOver;
-        print(i);
+    }
+    void Update()
+    {
+        _i = BorderDown.GetComponent<OverGame>().temp;
+        if (_i)
+        {
+            Destroy(Sphere);
+        }
     }
 }

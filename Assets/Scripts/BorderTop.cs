@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BorderTop : MonoBehaviour
 {
-    public bool CheckGameOver;
+    public bool CheckGameOver = false;
     private void OnTriggerExit(Collider other)
     {
         
